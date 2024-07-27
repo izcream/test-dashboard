@@ -1,3 +1,20 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["@typescript-eslint", "unused-imports", "import"],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "import/newline-after-import": "warn",
+    "unused-imports/no-unused-imports": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": [
+      "warn",
+      { "prefer": "type-imports", "fixStyle": "inline-type-imports" }
+    ]
+  }
 }
